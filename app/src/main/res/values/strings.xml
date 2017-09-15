@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">To-Do List</string>
+
+    <string name="add_new_task">Add a New Task</string>
+    <string name="task_required">Task requires content</string>
+    <string name="note_required">Note requires content</string>
+    <string name="task_hint">What\'s your plan&#8230;</string>
+    <string name="note_hint">Leave your note&#8230;</string>
+    <string name="note_hint_subject">Leave your subject&#8230;</string>
+    <string name="task_empty_hint">Your plan is empty</string>
+    <string name="note_empty_hint">Your note is empty</string>
+
+    <string name="task_empty_title">Seems you don\'t have any tasks&#8230;</string>
+    <string name="task_empty_subtitle">Get start by adding a task</string>
+    <string name="note_empty_title">Seems you don\'t have any notes&#8230;</string>
+    <string name="note_empty_subtitle">Get start by adding a note</string>
+
+    <string name="priority_high">HIGH</string>
+    <string name="priority_medium">MEDIUM</string>
+    <string name="priority_low">LOW</string>
+    <string name="priority">Priority</string>
+
+    <string name="add_new_note">Add New Note</string>
+    <string name="note_saved_prompt">Note saved</string>
+    <string name="note_deleted_prompt">Note deleted</string>
+    <string name="task_deleted_prompt">Task deleted</string>
+    <string name="task_saved_prompt">Task saved</string>
+</resources>

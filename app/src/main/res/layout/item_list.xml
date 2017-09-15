@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/p5_light_red">
+
+
+    <ImageView
+        android:id="@+id/list_task_background"
+        android:src="@drawable/haru2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/list_note_background"
+        android:src="@drawable/main2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <RelativeLayout
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/empty_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            tools:src="@drawable/icon_mbox_received" />
+
+        <TextView
+            android:id="@+id/empty_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/empty_image_view"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="16dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/p5_white"
+            tools:text="@string/task_empty_title" />
+
+        <TextView
+            android:id="@+id/empty_view_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/empty_view_title"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif"
+            android:paddingTop="8dp"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/p5_white"
+            tools:text="@string/task_empty_subtitle" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/transparent" >
+
+        <com.example.liminghao.to_dolist.EmptyRecyclerView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycler_view" />
+
+        <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+            android:id="@+id/recycler_view_header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal|top" >
+
+        </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
+
+        <!--TODO set background-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="TASK OR NOTE"
+            android:textSize="40sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/p5_black"
+            android:id="@+id/list_label"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"/>
+
+    </FrameLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/edit_note_bottom_layer"
+        android:visibility="visible" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/bottom_layer_reverse"
+            android:id="@+id/task_bottom_layer_view"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="104dp"
+            android:layout_height="59dp"
+            android:text="NOT"
+            android:textSize="50sp"
+            android:textColor="@color/p5_black"
+            android:layout_marginRight="99dp"
+            android:layout_marginEnd="99dp"
+            app:layout_constraintRight_toRightOf="@+id/task_bottom_layer_view"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="61dp"
+            android:layout_height="74dp"
+            android:text="E"
+            android:textSize="80sp"
+            android:textColor="@color/p5_white"
+            app:layout_constraintRight_toRightOf="@+id/task_bottom_layer_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="9dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="8dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.FloatingActionButton
+
+        android:id="@+id/task_item_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:clickable="true"
+        app:backgroundTint="@android:color/black"
+        app:fabSize="normal"
+        app:rippleColor="@color/p5_white"
+        app:elevation="8dp"
+        app:pressedTranslationZ="16dp"
+        android:src="@drawable/texting" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/note_bottom_layer"
+        android:visibility="visible" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/note_bottom_layer_view"
+            android:background="@drawable/bottom_layer"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="104dp"
+            android:layout_height="59dp"
+            android:text="ASK"
+            android:textSize="50sp"
+            android:textColor="@color/p5_black"
+            android:layout_marginLeft="99dp"
+            android:layout_marginStart="99dp"
+            app:layout_constraintLeft_toLeftOf="@+id/note_bottom_layer_view"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="61dp"
+            android:layout_height="74dp"
+            android:text="T"
+            android:textSize="80sp"
+            android:textColor="@color/p5_white"
+            app:layout_constraintLeft_toLeftOf="@+id/note_bottom_layer_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="8dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+
+        android:id="@+id/note_item_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true"
+        app:backgroundTint="@android:color/black"
+        app:fabSize="normal"
+        app:rippleColor="@color/p5_white"
+        app:elevation="8dp"
+        app:pressedTranslationZ="16dp"
+        android:src="@drawable/friends2" />
+
+
+</RelativeLayout>
+

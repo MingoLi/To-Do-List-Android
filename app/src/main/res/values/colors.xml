@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#B71C1C</color>
+
+    <color name="mainDarkerRed">#D2001C</color>
+
+    <color name="low_priority_blue">#42A5F5</color>
+    <color name="medium_priority_green">#4CAF50</color>
+    <color name="high_priority_red">#FF5252</color>
+
+    <color name="p5_dark_red">#D2001C</color>
+    <color name="p5_light_red">#AF0000</color>
+    <color name="p5_black">#0B0000</color>
+    <color name="p5_white">#FFFFFF</color>
+
+    <!--<selector-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--name="fab_ripple" >-->
+        <!--<item android:state_focused="true"-->
+            <!--android:color="@color/sample_focused" />-->
+        <!--<item android:state_pressed="true"-->
+            <!--android:state_enabled="false"-->
+            <!--android:color="@color/sample_disabled_pressed" />-->
+        <!--<item android:state_enabled="false"-->
+            <!--android:color="@color/sample_disabled_not_pressed" />-->
+        <!--<item android:color="@color/sample_default" />-->
+    <!--</selector>-->
+
+</resources>

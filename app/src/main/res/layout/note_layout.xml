@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_root_layout" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:src="@drawable/black_dialog"
+        android:id="@+id/note_layout_black_dialog"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:src="@drawable/white_dialog"
+        android:id="@+id/note_layout_white_dialog"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/note_layout_black_dialog"
+        android:layout_marginBottom="39.5dp" />
+
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/note_subject_view"
+        tools:text="sfsdf  sdg sdgs d xf "
+        android:textAppearance="?android:textAppearanceMedium"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxLength="20"
+        android:textColor="@color/p5_black"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="170dp"
+        android:layout_marginStart="170dp"
+        app:layout_constraintLeft_toLeftOf="@+id/note_layout_white_dialog"
+        app:layout_constraintTop_toTopOf="@+id/note_layout_white_dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/note_layout_white_dialog"
+        app:layout_constraintVertical_bias="0.40"
+        android:rotation="-3"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/note_content_view"
+        tools:text="this is content a a a a a a dfsd sdfsdf dsfsdf sdf dsf sdf sdfsd fsd fsd a a a a a a a a "
+        android:textAppearance="?android:textAppearanceLarge"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/p5_white"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="95dp"
+        app:layout_constraintLeft_toLeftOf="@+id/note_layout_black_dialog"
+        app:layout_constraintTop_toTopOf="@+id/note_layout_black_dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/note_layout_black_dialog"
+        app:layout_constraintVertical_bias="0.45"
+        android:rotation="-1" />
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@android:color/darker_gray"/>-->
+
+</android.support.constraint.ConstraintLayout>

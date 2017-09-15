@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/task_root_layout"
+        android:paddingBottom="16dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/black_dialog"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/task_layout_dialog_bubble"
+            android:paddingRight="16dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="0dp"
+            android:paddingStart="0dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_content_view"
+            tools:text="this is s s s s s s s s s s s s s s s s s s s s s "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/p5_white"
+            android:layout_centerVertical="true"
+            app:layout_constraintTop_toTopOf="@+id/task_layout_dialog_bubble"
+            app:layout_constraintBottom_toBottomOf="@+id/task_layout_dialog_bubble"
+            app:layout_constraintLeft_toLeftOf="@+id/task_layout_dialog_bubble"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingRight="55dp"
+            android:paddingStart="75dp"
+            android:paddingLeft="75dp"
+            android:paddingEnd="55dp"
+            app:layout_constraintVertical_bias="0.509" />
+
+
+
+        <TextView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:id="@+id/task_priority_view"
+            android:background="@drawable/priority_circle"
+            android:textColor="@android:color/primary_text_light"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintRight_toRightOf="@+id/task_content_view"
+            app:layout_constraintTop_toTopOf="@+id/task_layout_dialog_bubble"
+            app:layout_constraintBottom_toBottomOf="@+id/task_layout_dialog_bubble" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:background="@android:color/black"-->
+        <!--android:rotation="-8"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_marginRight="25dp"-->
+        <!--android:layout_marginLeft="70dp" />-->
+
+</LinearLayout>

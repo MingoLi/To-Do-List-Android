@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/p5_light_red" >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/joker_special_half"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="157dp"
+            android:layout_marginStart="157dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="120dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Task"
+            android:textStyle="bold"
+            android:textColor="@color/p5_white"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_margin="16dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_task_content"
+            android:hint="@string/task_hint"
+            android:textColorHint="@color/p5_white"
+            android:textColor="@color/p5_white"
+            android:textCursorDrawable="@null"
+            android:background="@null"
+            android:padding="16dp"  />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/priority"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/p5_white"
+            android:layout_margin="16dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:weightSum="3">
+
+                <Button
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onPrioritySelected"
+                    android:background="@color/high_priority_red"/>
+                <Button
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onPrioritySelected"
+                    android:background="@color/medium_priority_green"/>
+                <Button
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onPrioritySelected"
+                    android:background="@color/low_priority_blue"/>
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_gravity="center"
+                android:id="@+id/add_task_radio_group" >
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/priority_high"
+                    android:text="@string/priority_high"
+                    android:layout_weight="1"
+                    android:onClick="onPrioritySelected"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/priority_medium"
+                    android:text="@string/priority_medium"
+                    android:layout_weight="1"
+                    android:onClick="onPrioritySelected"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/priority_low"
+                    android:text="@string/priority_low"
+                    android:layout_weight="1"
+                    android:onClick="onPrioritySelected"/>
+
+            </RadioGroup>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="275dp"
+            android:src="@drawable/option_window_1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="61dp"
+            android:id="@+id/edit_task_option_bar"
+            android:layout_marginRight="171dp" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/action_delete_task"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:textColor="@color/p5_black"
+            android:text="D E L E T E"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:rotation="18"
+            android:background="@null"
+            android:onClick="onClickDeleteTask"
+            app:layout_constraintTop_toTopOf="@+id/edit_task_option_bar"
+            app:layout_constraintRight_toRightOf="@+id/edit_task_option_bar"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_task_option_bar"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_task_option_bar"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintVertical_bias="0.33" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/action_new_task"
+            android:layout_width="130dp"
+            android:layout_height="54dp"
+            android:text="S A V E"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/p5_white"
+            android:background="@null"
+            android:onClick="onClickAddTask"
+            app:layout_constraintRight_toRightOf="@+id/edit_task_option_bar"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_task_option_bar"
+            app:layout_constraintTop_toTopOf="@+id/edit_task_option_bar"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_task_option_bar"
+            app:layout_constraintHorizontal_bias="0.359"
+            app:layout_constraintVertical_bias="0.51"
+            android:rotation="4"/>
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/action_discard_task"
+            android:layout_width="130dp"
+            android:layout_height="54dp"
+            android:text="DISCARD"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/p5_white"
+            android:background="@null"
+            android:onClick="onClickDiscardTask"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_task_option_bar"
+            app:layout_constraintHorizontal_bias="0.16"
+            android:rotation="-15"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_task_option_bar"
+            app:layout_constraintTop_toTopOf="@+id/edit_task_option_bar"
+            app:layout_constraintVertical_bias="0.728" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/edit_task_bottom_layer"
+            android:background="@drawable/bottom_layer"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="104dp"
+            android:layout_height="59dp"
+            android:text="ASK"
+            android:textSize="50sp"
+            android:textColor="@color/p5_black"
+            android:layout_marginLeft="99dp"
+            android:layout_marginStart="99dp"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_task_bottom_layer"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="61dp"
+            android:layout_height="74dp"
+            android:text="T"
+            android:textSize="80sp"
+            android:textColor="@color/p5_white"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_task_bottom_layer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="8dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>
